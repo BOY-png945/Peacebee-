@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>피스비</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4fff4;
+}
+
+header{
+    background:#7ddf7d;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header img{
+    width:150px;
+    border-radius:50%;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    background:white;
+    padding:15px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.content{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.category{
+    display:none;
+}
+
+.category.active{
+    display:block;
+}
+
+.server{
+    background:white;
+    padding:15px;
+    margin:15px 0;
+    border-radius:15px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.join{
+    display:inline-block;
+    margin-top:10px;
+    background:#7ddf7d;
+    color:white;
+    padding:8px 15px;
+    border-radius:8px;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" alt="피스비 로고">
+    <h1>피스비</h1>
+    <p>디스코드 서버 초대링크 모음</p>
+</header>
+
+<nav>
+    <button onclick="showCategory('stel')">스텔라이브</button>
+    <button onclick="showCategory('community')">커뮤니티 서버</button>
+</nav>
+
+<div class="content">
+
+<div id="stel" class="category active">
+    <h2>스텔라이브</h2>
+
+    <div class="server">
+        <h3>서버 이름</h3>
+        <p>서버 설명</p>
+        <a class="join" href="#" target="_blank">참가하기</a>
+    </div>
+
+</div>
+
+<div id="community" class="category">
+    <h2>커뮤니티 서버</h2>
+
+    <div class="server">
+        <h3>서버 이름</h3>
+        <p>서버 설명</p>
+        <a class="join" href="#" target="_blank">참가하기</a>
+    </div>
+
+</div>
+
+</div>
+
+<script>
+function showCategory(id){
+    document.querySelectorAll('.category').forEach(c=>{
+        c.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
